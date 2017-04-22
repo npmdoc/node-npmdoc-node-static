@@ -1,0 +1,1197 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/cloudhead/node-static"
+
+    >node-static (v0.7.9)</a>
+</h1>
+<h4>simple, compliant file streaming module for node</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-static">module node-static</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-static.Server">
+            function <span class="apidocSignatureSpan">node-static.</span>Server
+            <span class="apidocSignatureSpan">(root, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-static.mime.Mime">
+            function <span class="apidocSignatureSpan">node-static.</span>mime.Mime
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-static.</span>Server.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-static.</span>mime</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-static.</span>mime.Mime.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-static.</span>mime.charsets</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-static.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-static.Server">module node-static.Server</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-static.Server.Server">
+            function <span class="apidocSignatureSpan">node-static.</span>Server
+            <span class="apidocSignatureSpan">(root, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-static.Server.prototype">module node-static.Server.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-static.Server.prototype.finish">
+            function <span class="apidocSignatureSpan">node-static.Server.prototype.</span>finish
+            <span class="apidocSignatureSpan">(status, headers, req, res, promise, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-static.Server.prototype.gzipOk">
+            function <span class="apidocSignatureSpan">node-static.Server.prototype.</span>gzipOk
+            <span class="apidocSignatureSpan">(req, contentType)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-static.Server.prototype.parseByteRange">
+            function <span class="apidocSignatureSpan">node-static.Server.prototype.</span>parseByteRange
+            <span class="apidocSignatureSpan">(req, stat)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-static.Server.prototype.resolve">
+            function <span class="apidocSignatureSpan">node-static.Server.prototype.</span>resolve
+            <span class="apidocSignatureSpan">(pathname)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-static.Server.prototype.respond">
+            function <span class="apidocSignatureSpan">node-static.Server.prototype.</span>respond
+            <span class="apidocSignatureSpan">(pathname, status, _headers, files, stat, req, res, finish)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-static.Server.prototype.respondGzip">
+            function <span class="apidocSignatureSpan">node-static.Server.prototype.</span>respondGzip
+            <span class="apidocSignatureSpan">(pathname, status, contentType, _headers, files, stat, req, res, finish)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-static.Server.prototype.respondNoGzip">
+            function <span class="apidocSignatureSpan">node-static.Server.prototype.</span>respondNoGzip
+            <span class="apidocSignatureSpan">(pathname, status, contentType, _headers, files, stat, req, res, finish)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-static.Server.prototype.serve">
+            function <span class="apidocSignatureSpan">node-static.Server.prototype.</span>serve
+            <span class="apidocSignatureSpan">(req, res, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-static.Server.prototype.serveDir">
+            function <span class="apidocSignatureSpan">node-static.Server.prototype.</span>serveDir
+            <span class="apidocSignatureSpan">(pathname, req, res, finish)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-static.Server.prototype.serveFile">
+            function <span class="apidocSignatureSpan">node-static.Server.prototype.</span>serveFile
+            <span class="apidocSignatureSpan">(pathname, status, headers, req, res)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-static.Server.prototype.servePath">
+            function <span class="apidocSignatureSpan">node-static.Server.prototype.</span>servePath
+            <span class="apidocSignatureSpan">(pathname, status, headers, req, res, finish)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-static.Server.prototype.stream">
+            function <span class="apidocSignatureSpan">node-static.Server.prototype.</span>stream
+            <span class="apidocSignatureSpan">(pathname, files, length, startByte, res, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-static.mime">module node-static.mime</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-static.mime.Mime">
+            function <span class="apidocSignatureSpan">node-static.mime.</span>Mime
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-static.mime.</span>charsets</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-static.mime.</span>extensions</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-static.mime.</span>types</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">node-static.mime.</span>default_type</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-static.mime.Mime">module node-static.mime.Mime</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-static.mime.Mime.Mime">
+            function <span class="apidocSignatureSpan">node-static.mime.</span>Mime
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-static.mime.Mime.prototype">module node-static.mime.Mime.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-static.mime.Mime.prototype.define">
+            function <span class="apidocSignatureSpan">node-static.mime.Mime.prototype.</span>define
+            <span class="apidocSignatureSpan">(map)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-static.mime.Mime.prototype.extension">
+            function <span class="apidocSignatureSpan">node-static.mime.Mime.prototype.</span>extension
+            <span class="apidocSignatureSpan">(mimeType)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-static.mime.Mime.prototype.load">
+            function <span class="apidocSignatureSpan">node-static.mime.Mime.prototype.</span>load
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-static.mime.Mime.prototype.lookup">
+            function <span class="apidocSignatureSpan">node-static.mime.Mime.prototype.</span>lookup
+            <span class="apidocSignatureSpan">(path, fallback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-static.mime.charsets">module node-static.mime.charsets</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-static.mime.charsets.lookup">
+            function <span class="apidocSignatureSpan">node-static.mime.charsets.</span>lookup
+            <span class="apidocSignatureSpan">(mimeType, fallback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-static" id="apidoc.module.node-static">module node-static</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-static.Server" id="apidoc.element.node-static.Server">
+        function <span class="apidocSignatureSpan">node-static.</span>Server
+        <span class="apidocSignatureSpan">(root, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Server = function (root, options) {
+    if (root &#x26;&#x26; (typeof(root) === &#x27;object&#x27;)) { options = root; root = null }
+
+    // resolve() doesn&#x27;t normalize (to lowercase) drive letters on Windows
+    this.root    = path.normalize(path.resolve(root || &#x27;.&#x27;));
+    this.options = options || {};
+    this.cache   = 3600;
+
+    this.defaultHeaders  = {};
+    this.options.headers = this.options.headers || {};
+
+    this.options.indexFile = this.options.indexFile || &#x22;index.html&#x22;;
+
+    if (&#x27;cache&#x27; in this.options) {
+        if (typeof(this.options.cache) === &#x27;number&#x27;) {
+            this.cache = this.options.cache;
+        } else if (! this.options.cache) {
+            this.cache = false;
+        }
+    }
+
+    if (&#x27;serverInfo&#x27; in this.options) {
+        this.serverInfo = this.options.serverInfo.toString();
+    } else {
+        this.serverInfo = &#x27;node-static/&#x27; + version.join(&#x27;.&#x27;);
+    }
+
+    this.defaultHeaders[&#x27;server&#x27;] = this.serverInfo;
+
+    if (this.cache !== false) {
+        this.defaultHeaders[&#x27;cache-control&#x27;] = &#x27;max-age=&#x27; + this.cache;
+    }
+
+    for (var k in this.defaultHeaders) {
+        this.options.headers[k] = this.options.headers[k] ||
+                                  this.defaultHeaders[k];
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```js
+var static = require(&#x27;node-static&#x27;);
+
+//
+// Create a node-static server instance to serve the &#x27;./public&#x27; folder
+//
+var file = new static.<span class="apidocCodeKeywordSpan">Server</span>(&#x27;./public&#x27;);
+
+require(&#x27;http&#x27;).createServer(function (request, response) {
+request.addListener(&#x27;end&#x27;, function () {
+    //
+    // Serve files!
+    //
+    file.serve(request, response);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-static.mime.Mime" id="apidoc.element.node-static.mime.Mime">
+        function <span class="apidocSignatureSpan">node-static.</span>mime.Mime
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Mime() {
+  // Map of extension -&#x3e; mime type
+  this.types = Object.create(null);
+
+  // Map of mime type -&#x3e; extension
+  this.extensions = Object.create(null);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-static.Server" id="apidoc.module.node-static.Server">module node-static.Server</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-static.Server.Server" id="apidoc.element.node-static.Server.Server">
+        function <span class="apidocSignatureSpan">node-static.</span>Server
+        <span class="apidocSignatureSpan">(root, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Server = function (root, options) {
+    if (root &#x26;&#x26; (typeof(root) === &#x27;object&#x27;)) { options = root; root = null }
+
+    // resolve() doesn&#x27;t normalize (to lowercase) drive letters on Windows
+    this.root    = path.normalize(path.resolve(root || &#x27;.&#x27;));
+    this.options = options || {};
+    this.cache   = 3600;
+
+    this.defaultHeaders  = {};
+    this.options.headers = this.options.headers || {};
+
+    this.options.indexFile = this.options.indexFile || &#x22;index.html&#x22;;
+
+    if (&#x27;cache&#x27; in this.options) {
+        if (typeof(this.options.cache) === &#x27;number&#x27;) {
+            this.cache = this.options.cache;
+        } else if (! this.options.cache) {
+            this.cache = false;
+        }
+    }
+
+    if (&#x27;serverInfo&#x27; in this.options) {
+        this.serverInfo = this.options.serverInfo.toString();
+    } else {
+        this.serverInfo = &#x27;node-static/&#x27; + version.join(&#x27;.&#x27;);
+    }
+
+    this.defaultHeaders[&#x27;server&#x27;] = this.serverInfo;
+
+    if (this.cache !== false) {
+        this.defaultHeaders[&#x27;cache-control&#x27;] = &#x27;max-age=&#x27; + this.cache;
+    }
+
+    for (var k in this.defaultHeaders) {
+        this.options.headers[k] = this.options.headers[k] ||
+                                  this.defaultHeaders[k];
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```js
+var static = require(&#x27;node-static&#x27;);
+
+//
+// Create a node-static server instance to serve the &#x27;./public&#x27; folder
+//
+var file = new static.<span class="apidocCodeKeywordSpan">Server</span>(&#x27;./public&#x27;);
+
+require(&#x27;http&#x27;).createServer(function (request, response) {
+request.addListener(&#x27;end&#x27;, function () {
+    //
+    // Serve files!
+    //
+    file.serve(request, response);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-static.Server.prototype" id="apidoc.module.node-static.Server.prototype">module node-static.Server.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-static.Server.prototype.finish" id="apidoc.element.node-static.Server.prototype.finish">
+        function <span class="apidocSignatureSpan">node-static.Server.prototype.</span>finish
+        <span class="apidocSignatureSpan">(status, headers, req, res, promise, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">finish = function (status, headers, req, res, promise, callback) {
+    var result = {
+        status:  status,
+        headers: headers,
+        message: http.STATUS_CODES[status]
+    };
+
+    headers[&#x27;server&#x27;] = this.serverInfo;
+
+    if (!status || status &#x3e;= 400) {
+        if (callback) {
+            callback(result);
+        } else {
+            if (promise.listeners(&#x27;error&#x27;).length &#x3e; 0) {
+                promise.emit(&#x27;error&#x27;, result);
+            }
+            else {
+              res.writeHead(status, headers);
+              res.end();
+            }
+        }
+    } else {
+        // Don&#x27;t end the request here, if we&#x27;re streaming;
+        // it&#x27;s taken care of in `prototype.stream`.
+        if (status !== 200 || req.method !== &#x27;GET&#x27;) {
+            res.writeHead(status, headers);
+            res.end();
+        }
+        callback &#x26;&#x26; callback(null, result);
+        promise.emit(&#x27;success&#x27;, result);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-static.Server.prototype.gzipOk" id="apidoc.element.node-static.Server.prototype.gzipOk">
+        function <span class="apidocSignatureSpan">node-static.Server.prototype.</span>gzipOk
+        <span class="apidocSignatureSpan">(req, contentType)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">gzipOk = function (req, contentType) {
+    var enable = this.options.gzip;
+    if(enable &#x26;&#x26;
+        (typeof enable === &#x27;boolean&#x27; ||
+            (contentType &#x26;&#x26; (enable instanceof RegExp) &#x26;&#x26; enable.test(contentType)))) {
+        var acceptEncoding = req.headers[&#x27;accept-encoding&#x27;];
+        return acceptEncoding &#x26;&#x26; acceptEncoding.indexOf(&#x22;gzip&#x22;) &#x3e;= 0;
+    }
+    return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-static.Server.prototype.parseByteRange" id="apidoc.element.node-static.Server.prototype.parseByteRange">
+        function <span class="apidocSignatureSpan">node-static.Server.prototype.</span>parseByteRange
+        <span class="apidocSignatureSpan">(req, stat)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseByteRange = function (req, stat) {
+    var byteRange = {
+      from: 0,
+      to: 0,
+      valid: false
+    }
+
+    var rangeHeader = req.headers[&#x27;range&#x27;];
+    var flavor = &#x27;bytes=&#x27;;
+
+    if (rangeHeader) {
+        if (rangeHeader.indexOf(flavor) == 0 &#x26;&#x26; rangeHeader.indexOf(&#x27;,&#x27;) == -1) {
+<span class="apidocCodeCommentSpan">            /* Parse */
+</span>            rangeHeader = rangeHeader.substr(flavor.length).split(&#x27;-&#x27;);
+            byteRange.from = parseInt(rangeHeader[0]);
+            byteRange.to = parseInt(rangeHeader[1]);
+
+            /* Replace empty fields of differential requests by absolute values */
+            if (isNaN(byteRange.from) &#x26;&#x26; !isNaN(byteRange.to)) {
+                byteRange.from = stat.size - byteRange.to;
+                byteRange.to = stat.size ? stat.size - 1 : 0;
+            } else if (!isNaN(byteRange.from) &#x26;&#x26; isNaN(byteRange.to)) {
+                byteRange.to = stat.size ? stat.size - 1 : 0;
+            }
+
+            /* General byte range validation */
+            if (!isNaN(byteRange.from) &#x26;&#x26; !!byteRange.to &#x26;&#x26; 0 &#x3c;= byteRange.from &#x26;&#x26; byteRange.from &#x3c; byteRange.to) {
+                byteRange.valid = true;
+            } else {
+                console.warn(&#x22;Request contains invalid range header: &#x22;, rangeHeader);
+            }
+        } else {
+            console.warn(&#x22;Request contains unsupported range header: &#x22;, rangeHeader);
+        }
+    }
+    return byteRange;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-static.Server.prototype.resolve" id="apidoc.element.node-static.Server.prototype.resolve">
+        function <span class="apidocSignatureSpan">node-static.Server.prototype.</span>resolve
+        <span class="apidocSignatureSpan">(pathname)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resolve = function (pathname) {
+    return path.resolve(path.join(this.root, pathname));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-static.Server.prototype.respond" id="apidoc.element.node-static.Server.prototype.respond">
+        function <span class="apidocSignatureSpan">node-static.Server.prototype.</span>respond
+        <span class="apidocSignatureSpan">(pathname, status, _headers, files, stat, req, res, finish)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">respond = function (pathname, status, _headers, files, stat, req, res, finish) {
+    var contentType = _headers[&#x27;Content-Type&#x27;] ||
+                      mime.lookup(files[0]) ||
+                      &#x27;application/octet-stream&#x27;;
+
+    if(this.options.gzip) {
+        this.respondGzip(pathname, status, contentType, _headers, files, stat, req, res, finish);
+    } else {
+        this.respondNoGzip(pathname, status, contentType, _headers, files, stat, req, res, finish);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-static.Server.prototype.respondGzip" id="apidoc.element.node-static.Server.prototype.respondGzip">
+        function <span class="apidocSignatureSpan">node-static.Server.prototype.</span>respondGzip
+        <span class="apidocSignatureSpan">(pathname, status, contentType, _headers, files, stat, req, res, finish)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">respondGzip = function (pathname, status, contentType, _headers, files, stat, req, res, finish) {
+    var that = this;
+    if(files.length == 1 &#x26;&#x26; this.gzipOk(req, contentType)) {
+        var gzFile = files[0] + &#x22;.gz&#x22;;
+        fs.stat(gzFile, function(e, gzStat) {
+            if(!e &#x26;&#x26; gzStat.isFile()) {
+                //console.log(&#x27;Serving&#x27;, gzFile, &#x27;to gzip-capable client instead of&#x27;, files[0], &#x27;new size is&#x27;, gzStat.size, &#x27;uncompressed
+ size&#x27;, stat.size);
+                var vary = _headers[&#x27;Vary&#x27;];
+                _headers[&#x27;Vary&#x27;] = (vary &#x26;&#x26; vary != &#x27;Accept-Encoding&#x27;?vary+&#x27;, &#x27;:&#x27;&#x27;)+&#x27;Accept-Encoding&#x27;;
+                _headers[&#x27;Content-Encoding&#x27;] = &#x27;gzip&#x27;;
+                stat.size = gzStat.size;
+                files = [gzFile];
+            } else {
+                //console.log(&#x27;gzip file not found or error finding it&#x27;, gzFile, String(e), stat.isFile());
+            }
+            that.respondNoGzip(pathname, status, contentType, _headers, files, stat, req, res, finish);
+        });
+    } else {
+        // Client doesn&#x27;t want gzip or we&#x27;re sending multiple files
+        that.respondNoGzip(pathname, status, contentType, _headers, files, stat, req, res, finish);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-static.Server.prototype.respondNoGzip" id="apidoc.element.node-static.Server.prototype.respondNoGzip">
+        function <span class="apidocSignatureSpan">node-static.Server.prototype.</span>respondNoGzip
+        <span class="apidocSignatureSpan">(pathname, status, contentType, _headers, files, stat, req, res, finish)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">respondNoGzip = function (pathname, status, contentType, _headers, files, stat, req, res, finish) {
+    var mtime           = Date.parse(stat.mtime),
+        key             = pathname || files[0],
+        headers         = {},
+        clientETag      = req.headers[&#x27;if-none-match&#x27;],
+        clientMTime     = Date.parse(req.headers[&#x27;if-modified-since&#x27;]),
+        startByte       = 0,
+        length          = stat.size,
+        byteRange       = this.parseByteRange(req, stat);
+
+<span class="apidocCodeCommentSpan">    /* Handle byte ranges */
+</span>    if (files.length == 1 &#x26;&#x26; byteRange.valid) {
+        if (byteRange.to &#x3c; length) {
+
+            // Note: HTTP Range param is inclusive
+            startByte = byteRange.from;
+            length = byteRange.to - byteRange.from + 1;
+            status = 206;
+
+            // Set Content-Range response header (we advertise initial resource size on server here (stat.size))
+            headers[&#x27;Content-Range&#x27;] = &#x27;bytes &#x27; + byteRange.from + &#x27;-&#x27; + byteRange.to + &#x27;/&#x27; + stat.size;
+
+        } else {
+            byteRange.valid = false;
+            console.warn(&#x22;Range request exceeds file boundaries, goes until byte no&#x22;, byteRange.to, &#x22;against file size of&#x22;, length
+, &#x22;bytes&#x22;);
+        }
+    }
+
+    /* In any case, check for unhandled byte range headers */
+    if (!byteRange.valid &#x26;&#x26; req.headers[&#x27;range&#x27;]) {
+        console.error(new Error(&#x22;Range request present but invalid, might serve whole file instead&#x22;));
+    }
+
+    // Copy default headers
+    for (var k in this.options.headers) {  headers[k] = this.options.headers[k] }
+    // Copy custom headers
+    for (var k in _headers) { headers[k] = _headers[k] }
+
+    headers[&#x27;Etag&#x27;]          = JSON.stringify([stat.ino, stat.size, mtime].join(&#x27;-&#x27;));
+    headers[&#x27;Date&#x27;]          = new(Date)().toUTCString();
+    headers[&#x27;Last-Modified&#x27;] = new(Date)(stat.mtime).toUTCString();
+    headers[&#x27;Content-Type&#x27;]   = contentType;
+    headers[&#x27;Content-Length&#x27;] = length;
+
+    for (var k in _headers) { headers[k] = _headers[k] }
+
+    // Conditional GET
+    // If the &#x22;If-Modified-Since&#x22; or &#x22;If-None-Match&#x22; headers
+    // match the conditions, send a 304 Not Modified.
+    if ((clientMTime  || clientETag) &#x26;&#x26;
+        (!clientETag  || clientETag === headers[&#x27;Etag&#x27;]) &#x26;&#x26;
+        (!clientMTime || clientMTime &#x3e;= mtime)) {
+        // 304 response should not contain entity headers
+        [&#x27;Content-Encoding&#x27;,
+         &#x27;Content-Language&#x27;,
+         &#x27;Content-Length&#x27;,
+         &#x27;Content-Location&#x27;,
+         &#x27;Content-MD5&#x27;,
+         &#x27;Content-Range&#x27;,
+         &#x27;Content-Type&#x27;,
+         &#x27;Expires&#x27;,
+         &#x27;Last-Modified&#x27;].forEach(function(entityHeader) {
+            delete headers[entityHeader];
+        });
+        finish(304, headers);
+    } else {
+
+        res.writeHead(status, headers);
+
+        this.stream(key, files, length, startByte, res, function (e) {
+            if (e) { return finish(500, {}) }
+            finish(status, headers);
+        });
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-static.Server.prototype.serve" id="apidoc.element.node-static.Server.prototype.serve">
+        function <span class="apidocSignatureSpan">node-static.Server.prototype.</span>serve
+        <span class="apidocSignatureSpan">(req, res, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">serve = function (req, res, callback) {
+    var that    = this,
+        promise = new(events.EventEmitter),
+        pathname;
+
+    var finish = function (status, headers) {
+        that.finish(status, headers, req, res, promise, callback);
+    };
+
+    try {
+        pathname = decodeURI(url.parse(req.url).pathname);
+    }
+    catch(e) {
+        return process.nextTick(function() {
+            return finish(400, {});
+        });
+    }
+
+    process.nextTick(function () {
+        that.servePath(pathname, 200, {}, req, res, finish).on(&#x27;success&#x27;, function (result) {
+            promise.emit(&#x27;success&#x27;, result);
+        }).on(&#x27;error&#x27;, function (err) {
+            promise.emit(&#x27;error&#x27;);
+        });
+    });
+    if (! callback) { return promise }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var file = new static.Server(&#x27;./public&#x27;);
+
+require(&#x27;http&#x27;).createServer(function (request, response) {
+    request.addListener(&#x27;end&#x27;, function () {
+        //
+        // Serve files!
+        //
+        file.<span class="apidocCodeKeywordSpan">serve</span>(request, response);
+    }).resume();
+}).listen(8080);
+```
+
+API
+---
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-static.Server.prototype.serveDir" id="apidoc.element.node-static.Server.prototype.serveDir">
+        function <span class="apidocSignatureSpan">node-static.Server.prototype.</span>serveDir
+        <span class="apidocSignatureSpan">(pathname, req, res, finish)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">serveDir = function (pathname, req, res, finish) {
+    var htmlIndex = path.join(pathname, this.options.indexFile),
+        that = this;
+
+    fs.stat(htmlIndex, function (e, stat) {
+        if (!e) {
+            var status = 200;
+            var headers = {};
+            var originalPathname = decodeURI(url.parse(req.url).pathname);
+            if (originalPathname.length &#x26;&#x26; originalPathname.charAt(originalPathname.length - 1) !== &#x27;/&#x27;) {
+                return finish(301, { &#x27;Location&#x27;: originalPathname + &#x27;/&#x27; });
+            } else {
+                that.respond(null, status, headers, [htmlIndex], stat, req, res, finish);
+            }
+        } else {
+            // Stream a directory of files as a single file.
+            fs.readFile(path.join(pathname, &#x27;index.json&#x27;), function (e, contents) {
+                if (e) { return finish(404, {}) }
+                var index = JSON.parse(contents);
+                streamFiles(index.files);
+            });
+        }
+    });
+    function streamFiles(files) {
+        util.mstat(pathname, files, function (e, stat) {
+            if (e) { return finish(404, {}) }
+            that.respond(pathname, 200, {}, files, stat, req, res, finish);
+        });
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-static.Server.prototype.serveFile" id="apidoc.element.node-static.Server.prototype.serveFile">
+        function <span class="apidocSignatureSpan">node-static.Server.prototype.</span>serveFile
+        <span class="apidocSignatureSpan">(pathname, status, headers, req, res)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">serveFile = function (pathname, status, headers, req, res) {
+    var that = this;
+    var promise = new(events.EventEmitter);
+
+    pathname = this.resolve(pathname);
+
+    fs.stat(pathname, function (e, stat) {
+        if (e) {
+            return promise.emit(&#x27;error&#x27;, e);
+        }
+        that.respond(null, status, headers, [pathname], stat, req, res, function (status, headers) {
+            that.finish(status, headers, req, res, promise);
+        });
+    });
+    return promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### Serving specific files #
+
+If you want to serve a specific file, like an error page for example, use the `serveFile` method:
+
+```js
+fileServer.<span class="apidocCodeKeywordSpan">serveFile</span>(&#x27;/error.html&#x27;, 500, {}, request, response);
+```
+
+This will serve the `error.html` file, from under the file root directory, with a `500` status code.
+For example, you could serve an error page, when the initial request wasn&#x27;t found:
+
+```js
+require(&#x27;http&#x27;).createServer(function (request, response) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-static.Server.prototype.servePath" id="apidoc.element.node-static.Server.prototype.servePath">
+        function <span class="apidocSignatureSpan">node-static.Server.prototype.</span>servePath
+        <span class="apidocSignatureSpan">(pathname, status, headers, req, res, finish)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">servePath = function (pathname, status, headers, req, res, finish) {
+    var that = this,
+        promise = new(events.EventEmitter);
+
+    pathname = this.resolve(pathname);
+
+    // Make sure we&#x27;re not trying to access a
+    // file outside of the root.
+    if (pathname.indexOf(that.root) === 0) {
+        fs.stat(pathname, function (e, stat) {
+            if (e) {
+                finish(404, {});
+            } else if (stat.isFile()) {      // Stream a single file.
+                that.respond(null, status, headers, [pathname], stat, req, res, finish);
+            } else if (stat.isDirectory()) { // Stream a directory of files.
+                that.serveDir(pathname, req, res, finish);
+            } else {
+                finish(400, {});
+            }
+        });
+    } else {
+        // Forbidden
+        finish(403, {});
+    }
+    return promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-static.Server.prototype.stream" id="apidoc.element.node-static.Server.prototype.stream">
+        function <span class="apidocSignatureSpan">node-static.Server.prototype.</span>stream
+        <span class="apidocSignatureSpan">(pathname, files, length, startByte, res, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stream = function (pathname, files, length, startByte, res, callback) {
+
+    (function streamFile(files, offset) {
+        var file = files.shift();
+
+        if (file) {
+            file = path.resolve(file) === path.normalize(file)  ? file : path.join(pathname || &#x27;.&#x27;, file);
+
+            // Stream the file to the client
+            fs.createReadStream(file, {
+                flags: &#x27;r&#x27;,
+                mode: 0666,
+                start: startByte,
+                end: startByte + (length ? length - 1 : 0)
+            }).on(&#x27;data&#x27;, function (chunk) {
+                // Bounds check the incoming chunk and offset, as copying
+                // a buffer from an invalid offset will throw an error and crash
+                if (chunk.length &#x26;&#x26; offset &#x3c; length &#x26;&#x26; offset &#x3e;= 0) {
+                    offset += chunk.length;
+                }
+            }).on(&#x27;close&#x27;, function () {
+                streamFile(files, offset);
+            }).on(&#x27;error&#x27;, function (err) {
+                callback(err);
+                console.error(err);
+            }).pipe(res, { end: false });
+        } else {
+            res.end();
+            callback(null, offset);
+        }
+    })(files.slice(0), 0);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-static.mime" id="apidoc.module.node-static.mime">module node-static.mime</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-static.mime.Mime" id="apidoc.element.node-static.mime.Mime">
+        function <span class="apidocSignatureSpan">node-static.mime.</span>Mime
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Mime() {
+  // Map of extension -&#x3e; mime type
+  this.types = Object.create(null);
+
+  // Map of mime type -&#x3e; extension
+  this.extensions = Object.create(null);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-static.mime.Mime" id="apidoc.module.node-static.mime.Mime">module node-static.mime.Mime</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-static.mime.Mime.Mime" id="apidoc.element.node-static.mime.Mime.Mime">
+        function <span class="apidocSignatureSpan">node-static.mime.</span>Mime
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Mime() {
+  // Map of extension -&#x3e; mime type
+  this.types = Object.create(null);
+
+  // Map of mime type -&#x3e; extension
+  this.extensions = Object.create(null);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-static.mime.Mime.prototype" id="apidoc.module.node-static.mime.Mime.prototype">module node-static.mime.Mime.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-static.mime.Mime.prototype.define" id="apidoc.element.node-static.mime.Mime.prototype.define">
+        function <span class="apidocSignatureSpan">node-static.mime.Mime.prototype.</span>define
+        <span class="apidocSignatureSpan">(map)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">define = function (map) {
+  for (var type in map) {
+    var exts = map[type];
+    for (var i = 0; i &#x3c; exts.length; i++) {
+      if (process.env.DEBUG_MIME &#x26;&#x26; this.types[exts]) {
+        console.warn(this._loading.replace(/.*\//, &#x27;&#x27;), &#x27;changes &#x22;&#x27; + exts[i] + &#x27;&#x22; extension type from &#x27; +
+          this.types[exts] + &#x27; to &#x27; + type);
+      }
+
+      this.types[exts[i]] = type;
+    }
+
+    // Default extension is the first one we encounter
+    if (!this.extensions[type]) {
+      this.extensions[type] = exts[0];
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-static.mime.Mime.prototype.extension" id="apidoc.element.node-static.mime.Mime.prototype.extension">
+        function <span class="apidocSignatureSpan">node-static.mime.Mime.prototype.</span>extension
+        <span class="apidocSignatureSpan">(mimeType)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extension = function (mimeType) {
+  var type = mimeType.match(/^\s*([^;\s]*)(?:;|\s|$)/)[1].toLowerCase();
+  return this.extensions[type];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-static.mime.Mime.prototype.load" id="apidoc.element.node-static.mime.Mime.prototype.load">
+        function <span class="apidocSignatureSpan">node-static.mime.Mime.prototype.</span>load
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">load = function (file) {
+  this._loading = file;
+  // Read file and split into lines
+  var map = {},
+      content = fs.readFileSync(file, &#x27;ascii&#x27;),
+      lines = content.split(/[\r\n]+/);
+
+  lines.forEach(function(line) {
+    // Clean up whitespace/comments, and split into fields
+    var fields = line.replace(/\s*#.*|^\s*|\s*$/g, &#x27;&#x27;).split(/\s+/);
+    map[fields.shift()] = fields;
+  });
+
+  this.define(map);
+
+  this._loading = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-static.mime.Mime.prototype.lookup" id="apidoc.element.node-static.mime.Mime.prototype.lookup">
+        function <span class="apidocSignatureSpan">node-static.mime.Mime.prototype.</span>lookup
+        <span class="apidocSignatureSpan">(path, fallback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">lookup = function (path, fallback) {
+  var ext = path.replace(/.*[\.\/\\]/, &#x27;&#x27;).toLowerCase();
+
+  return this.types[ext] || fallback || this.default_type;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-static.mime.charsets" id="apidoc.module.node-static.mime.charsets">module node-static.mime.charsets</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-static.mime.charsets.lookup" id="apidoc.element.node-static.mime.charsets.lookup">
+        function <span class="apidocSignatureSpan">node-static.mime.charsets.</span>lookup
+        <span class="apidocSignatureSpan">(mimeType, fallback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">lookup = function (mimeType, fallback) {
+  // Assume text types are utf8
+  return (/^text\//).test(mimeType) ? &#x27;UTF-8&#x27; : fallback;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
